@@ -1,0 +1,82 @@
+@use 'variaveis';
+
+.btn {
+  border-radius: variaveis.$radius-default;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: variaveis.$transition-default;
+  font-weight: bold;
+}
+
+.btn__text {
+  display: inline-block;
+}
+
+.btn--primary {
+  background-color: variaveis.$secondary;
+  color: variaveis.$primary;
+}
+
+.btn--secondary {
+  background-color: variaveis.$danger;
+  color: variaveis.$primary;
+}
+
+.btn--chrome {
+  background-color: variaveis.$secondary;
+  color: variaveis.$primary;
+}
+
+.btn--firefox {
+  background-color: variaveis.$gray-light;
+  color: variaveis.$black;
+  box-shadow: variaveis.$shadow-default;
+}
+
+.btn--small {
+  padding: 15px 30px;
+  font-size: variaveis.$font-size-base;
+}
+
+.btn--medium {
+  padding: 18px 40px;
+  font-size: variaveis.$font-size-base;
+}
+
+.btn--large {
+  padding: 20px 30px;
+  font-size: variaveis.$font-size-subtitle;
+}
+
+.btn--xlarge {
+  padding: 22px 30px;
+  font-size: variaveis.$font-size-subtitle;
+}
+
+.btn--full-width {
+  width: 100%;
+}
+
+.btn--auto {
+  margin: variaveis.$margin-auto;
+}
+
+.btn--rounded {
+  border-radius: variaveis.$radius-default;
+}
+
+.btn:hover {
+  opacity: variaveis.$opacity-hover;
+  transform: translateY(-2px);
+}
+
+.btn--firefox:hover {
+  background-color: variaveis.$firefox-hover-bg;
+}
+
+.btn-group {
+  display: flex;
+  gap: variaveis.$gap-default;
+  align-items: center;
+}

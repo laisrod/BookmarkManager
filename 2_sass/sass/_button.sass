@@ -1,0 +1,62 @@
+@use 'variaveis'
+
+.btn
+  border-radius: variaveis.$radius-default
+  cursor: variaveis.$cursor-pointer
+  text-decoration: variaveis.$text-decoration-none
+  text-align: variaveis.$text-align-center
+  transition: variaveis.$transition-default
+  font-weight: variaveis.$font-weight-bold
+
+.btn__text
+  display: variaveis.$display-inline-block
+
+.btn--primary
+  background-color: variaveis.$secondary
+  color: variaveis.$primary
+
+.btn--secondary
+  background-color: variaveis.$danger
+  color: variaveis.$primary
+
+.btn--chrome
+  background-color: variaveis.$secondary
+  color: variaveis.$primary
+
+.btn--firefox
+  background-color: variaveis.$firefox-hover-bg
+  color: variaveis.$text-dark
+  box-shadow: variaveis.$btn-shadow
+
+.btn--small
+  padding: variaveis.$btn-padding-small
+  font-size: variaveis.$font-size-base
+
+.btn--medium
+  padding: variaveis.$padding-medium variaveis.$padding-large
+  font-size: variaveis.$font-size-base
+
+.btn--xlarge
+  padding: variaveis.$btn-padding-xlarge
+  font-size: variaveis.$font-size-description
+
+.btn--full-width
+  width: 100%
+
+.btn--auto
+  margin: variaveis.$margin-auto
+
+.btn--rounded
+  border-radius: variaveis.$radius-default
+
+.btn:hover
+  opacity: variaveis.$opacity-hover
+  transform: translateY(-2px)
+
+.btn--firefox:hover
+  background-color: variaveis.$firefox-hover-bg
+
+.btn-group
+  display: variaveis.$display-flex
+  gap: variaveis.$gap-default
+  align-items: variaveis.$align-items-center

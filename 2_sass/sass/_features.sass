@@ -1,0 +1,56 @@
+@use 'variaveis';
+
+.tab-underline 
+  border-bottom: variaveis.$border-bottom-default variaveis.$text-dark
+  justify-content: variaveis.$justify-center
+  width: 100%
+  margin-bottom: variaveis.$margin-medium
+
+
+.features-container-list 
+  display: variaveis.$display-flex
+  list-style: variaveis.$list-style-none
+  text-align: variaveis.$text-align-center
+  padding-bottom: 30px
+  font-size: variaveis.$font-size-title
+  justify-content: space-around
+
+
+.features-container-list a 
+  color: variaveis.$gray-light
+  padding-bottom: variaveis.$padding-large
+  font-size: variaveis.$font-size-description
+  text-decoration: none
+  border-bottom: variaveis.$border-bottom-default variaveis.$text-dark
+  transition: color 0.5s, border-bottom 0.5s
+
+
+.features-container-list a:hover 
+  color: variaveis.$text-dark
+  border-bottom: variaveis.$border-bottom-default variaveis.$text-dark
+
+
+.tab-content 
+  display: none
+
+.tab-content:target 
+  display: block
+
+
+.tab-content--default 
+  display: block
+
+
+.tab-content:target ~ .tab-content--default 
+    display: none
+
+
+#tab-speedy:target ~ #tab-easy,
+#tab-easy:target ~ #tab-speedy 
+  display: none
+
+
+.tab-content:first-of-type:target,
+.tab-content:first-of-type:not(:target) 
+  display: block
+

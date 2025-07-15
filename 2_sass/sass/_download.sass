@@ -1,0 +1,43 @@
+@use 'variaveis'
+
+.download
+  text-align: variaveis.$align-center
+  margin-bottom: 100px
+
+.download__text
+  padding-bottom: variaveis.$padding-medium
+
+.download__article
+  display: variaveis.$display-flex
+  align-items: variaveis.$align-items-center
+  justify-content: variaveis.$justify-center
+  flex-wrap: wrap
+  gap: variaveis.$gap-list
+  max-width: 100%
+  margin: variaveis.$margin-auto
+
+.download__article-item
+  box-shadow: variaveis.$card-box-shadow
+  padding: variaveis.$card-padding-vertical variaveis.$card-padding-horizontal
+  max-width: 100%
+  transition: variaveis.$transition-default
+  width: variaveis.$card-width
+  border-radius: variaveis.$card-radius
+
+.download__article-item:hover
+  transform: translateY(-10px) scale(1.03)
+  box-shadow: variaveis.$shadow-hover
+
+.download__img-text-article
+  margin-bottom: variaveis.$margin-small
+  border-bottom: variaveis.$border-dotted-default variaveis.$text-dark
+  
+
+.dowload__img-text-title
+  font-size: variaveis.$font-size-title
+  padding-bottom: variaveis.$padding-small
+
+.download__article-detail
+  padding-bottom: variaveis.$padding-large
+  color: variaveis.$text-dark
+  font-size: variaveis.$font-size-description

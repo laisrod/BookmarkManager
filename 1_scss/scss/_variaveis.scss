@@ -1,0 +1,121 @@
+// Variáveis de cor, fonte, espaçamento, breakpoints
+$primary: white;
+$secondary: rgb(97, 117, 246);
+$danger: rgb(246, 97, 97);
+$gray: rgba(149, 149, 149, 0.823);
+$gray-light: #a0a0b0;
+$footer-bg: rgb(31, 38, 79);
+$firefox-hover-bg: rgba(138, 136, 156, 0.3);
+$black: black;
+
+$font-main: 'Lato', sans-serif;
+
+$padding-section: 150px 50px 110px 50px;
+$max-width: 1400px;
+$card-width: 320px;
+
+$text-dark: #222;
+$text-light: #fff;
+$hover-bg: #f5f5f5;
+$border-color: #e0e0e0; 
+$border-default: 1px solid $border-color;
+$border-bottom-default: 2px solid;
+$border-dotted-default: 6px dotted;
+$border-none: none;
+
+$padding-small: 8px;
+$padding-medium: 16px;
+$padding-large: 32px;
+$padding-xlarge: 50px;
+
+
+$gap-list: 12px;
+$gap-default: 20px;
+$gap-card: 24px;
+$gap-section: 60px;
+$gap-footer: 40px;
+$gap-footer: 40px;
+
+$align-center: center;
+$justify-center: center;
+$align-self-end: flex-end;
+
+$margin-small: 8px;
+$margin-medium: 16px;
+$margin-large: 32px;
+$margin-full-width: calc(-50vw + 50%);
+
+$font-size-small: 14px;
+$font-size-base: 16px;
+$font-size-description: 24px; //subtitle
+$font-size-title: 32px;
+$font-size-h1: 40px;
+
+$letter-spacing-default: 2px;
+
+$flex-row: row;
+$flex-column: column;
+
+$transition-default: all 0.3s ease;
+$transition-fast: all 0.15s ease;
+
+$margin-auto: 0 auto;
+$section-gap: 60px;
+
+$radius-default: 5px;
+$radius-card: 12px;
+$shadow-default: 0 2px 8px rgba(0,0,0,0.12);
+$shadow-hover: 0 8px 24px rgba(0,0,0,0.18);
+
+$mobile: 768px;
+$tablet: 991px;
+$desktop: 1200px;
+
+$btn-shadow: 0 2px 4px rgba(0,0,0,0.10);
+$btn-shadow-hover: 0 4px 12px rgba(0,0,0,0.18);
+
+$icon-size: 24px;
+
+$opacity-hover: 0.8;
+$opacity-disabled: 0.5;
+
+
+$display-flex: flex;
+$display-none: none;
+$display-block: block;
+$display-grid: grid;
+
+$justify-content-between: space-between;
+$justify-content-around: space-around;
+$justify-content-center: center;
+$justify-content-start: flex-start;
+$justify-content-end: flex-end;
+
+$align-items-center: center;
+
+
+$flex-direction-row: row;
+$flex-direction-column: column;
+
+$position-fixed: fixed;
+
+$z-index-1000: 1000;
+
+$box-shadow-default: 0 2px 8px rgba(0, 0, 0, 0.121);
+
+$width-full: 50px;
+$height-full: 50px;
+
+$list-style-none: none;
+
+$text-decoration-none: none;
+
+$cursor-pointer: pointer;
+
+$text-align-left: left;
+
+$line-height-default: 1.3;
+
+$display-flex: flex;
+
+$letter-spacing-default: 2px;
