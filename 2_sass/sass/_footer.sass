@@ -4,34 +4,34 @@
   background-color: variaveis.$footer-bg
 
 .footer-container
-  display: flex
-  justify-content: space-between
-  align-items: center
+  display: variaveis.$display-flex
+  justify-content: variaveis.$justify-content-space-between
+  align-items: variaveis.$align-center
   padding: variaveis.$padding-large variaveis.$padding-xlarge
   width: 100%
   margin: variaveis.$margin-auto
 
 .footer__logo
-  display: flex
-  align-items: center
+  display: variaveis.$display-flex
+  align-items: variaveis.$align-center
   gap: variaveis.$gap-list
 
 .footer__logo-text
   color: variaveis.$primary
-  font-weight: bold
+  font-weight: variaveis.$font-weight-bold
   font-size: variaveis.$font-size-description
   letter-spacing: variaveis.$letter-spacing-default
 
 .footer__links
   display: variaveis.$display-flex
   gap: variaveis.$gap-footer
-  list-style: none
+  list-style: variaveis.$list-style-none
   padding: 0
   margin: 0
 
 .footer__links a
   color: variaveis.$primary
-  text-decoration: none
+  text-decoration: variaveis.$text-decoration-none
   font-size: variaveis.$font-size-description
   transition: variaveis.$transition-default
   letter-spacing: variaveis.$letter-spacing-default
@@ -40,7 +40,7 @@
   color: variaveis.$danger
 
 .footer__social
-  display: flex
+  display: variaveis.$display-flex
   gap: variaveis.$gap-default
 
 .footer__social-link img
@@ -49,3 +49,49 @@
 
 .footer__social-link:hover img
   transform: translateY(-6px)
+
+@media (max-width: 768px)
+  .footer__links
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 10px
+
+  .footer__social-link img
+    height: 24px
+
+  .footer-container
+    flex-direction: column
+    gap: 16px
+    text-align: center
+    align-items: center
+
+  .footer__logo
+    justify-content: center
+
+  .footer__social
+    justify-content: center
+    gap: 12px
+
+@media (max-width: 991px)
+  .footer__links
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 10px
+
+  .footer__social-link img
+    height: 24px
+
+  .footer-container
+    flex-direction: column
+    gap: 16px
+    text-align: center
+    align-items: center
+
+  .footer__logo
+    justify-content: center
+
+  .footer__social
+    justify-content: center
+    gap: 12px

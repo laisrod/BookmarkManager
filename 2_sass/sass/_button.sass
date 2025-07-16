@@ -56,7 +56,27 @@
 .btn--firefox:hover
   background-color: variaveis.$firefox-hover-bg
 
+.btn--large
+  padding: variaveis.$btn-padding-xlarge
+  font-size: variaveis.$font-size-description
+
 .btn-group
   display: variaveis.$display-flex
   gap: variaveis.$gap-default
   align-items: variaveis.$align-items-center
+
+@media (max-width: 768px)
+  .btn
+    font-size: variaveis.$font-size-base
+    padding: 10px 0
+    width: 100%
+    max-width: 240px
+    min-width: 0
+    margin: 0 auto
+
+  .btn--small,
+  .btn--medium,
+  .btn--large,
+  .btn--xlarge
+    font-size: variaveis.$font-size-base
+    padding: 10px 0

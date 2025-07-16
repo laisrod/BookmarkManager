@@ -38,3 +38,63 @@
   line-height: variaveis.$line-height-default
   padding-top: variaveis.$padding-small
   color: variaveis.$gray
+
+@media (max-width: 768px)
+
+  .questions, .question
+    width: 100%
+    max-width: 100%
+    display: flex
+    flex-direction: column
+    gap: 0
+
+  .question__container
+    border-bottom: 1px solid #d1d5db
+    padding-top: variaveis.$padding-medium2
+    margin: 0
+
+  .question__container summary
+    list-style: none
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: space-between
+    font-size: 18px
+    font-weight:400
+    color: black
+
+  .question__container-title
+    font-size: 1rem
+    font-weight: 500
+    color: #333
+    margin: 0
+
+  .question__container-response
+    font-size: 16px
+    color: #555
+    padding: 0 0 14px 0
+    margin: 0
+    line-height: 1.5
+
+
+
+@media (max-width: 991px)
+  
+  .question
+    max-width: 700px
+    margin: 0 auto
+    padding-left: 16px
+    padding-right: 16px
+    box-sizing: border-box
+
+  .question__container-title
+    font-size: 18px
+
+  .question__container-response
+    font-size: 15px
+    padding: 0 0 12px 0
+
+  .question .btn
+    max-width: 220px
+    font-size: 15px
+    padding: 10px 0

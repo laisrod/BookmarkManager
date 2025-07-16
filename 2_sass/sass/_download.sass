@@ -11,7 +11,7 @@
   display: variaveis.$display-flex
   align-items: variaveis.$align-items-center
   justify-content: variaveis.$justify-center
-  flex-wrap: wrap
+  flex-wrap: variaveis.$flex-wrap
   gap: variaveis.$gap-list
   max-width: 100%
   margin: variaveis.$margin-auto
@@ -41,3 +41,52 @@
   padding-bottom: variaveis.$padding-large
   color: variaveis.$text-dark
   font-size: variaveis.$font-size-description
+
+@media (max-width: 768px)
+  .download__article
+    flex-direction: column
+    align-items: center
+    gap: 16px
+    width: 100%
+    padding: 0
+
+  .download__article-item
+    width: 100%
+    max-width: 320px
+    margin: 0 auto
+    padding: 30px 10px
+    box-sizing: border-box
+
+  .download__img-text-article
+    margin-bottom: 12px
+    border-bottom: 3px dotted rgba(0, 0, 0, 0.2)
+    padding-bottom: 10px
+
+  .download__article-title
+    font-size: 18px
+    padding-top: 16px
+    padding-bottom: 6px
+
+  .download__article-detail
+    font-size: 13px
+    padding-bottom: 20px
+
+@media (max-width: 991px)
+
+  .download__article
+    flex-direction: column
+    gap: 20px
+    align-items: center
+
+  .download__article-item
+    max-width: 350px
+    padding: 30px 10px
+
+  .download__article-title
+    font-size: 20px
+    padding-top: 10px
+    padding-bottom: 6px
+
+  .download__article-detail
+    font-size: 15px
+    padding-bottom: 16px

@@ -1,26 +1,30 @@
 @use 'variaveis'
 
-.contact
-  background-color: variaveis.$secondary
-  flex-direction: variaveis.$flex-column
-  width: 100vw
-  max-width: 100vw
-  justify-items: variaveis.$align-center
-  padding-top: variaveis.$padding-large
-  padding-bottom: variaveis.$padding-xlarge
-  margin-left: variaveis.$margin-full-width
-  margin-right: variaveis.$margin-full-width
+.section.contact-section
+  padding: 0
+  margin: 0
+  background: variaveis.$secondary
 
-.contact__container
-  color: variaveis.$primary
-  display: variaveis.$display-flex
-  flex-direction: variaveis.$flex-column
-  align-items: variaveis.$align-center
-  justify-content: variaveis.$justify-center
-  text-align: center
-  max-width: 600px
-  margin: variaveis.$margin-auto
-  padding: 0 variaveis.$padding-medium
+  .contact
+    background-color: variaveis.$transparent
+    width: 100%
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    padding: 40px 0
+
+    .contact__container
+      max-width: 600px
+      width: 100%
+      margin: 0 auto
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      text-align: center
+      padding: 0 16px
 
 .contact__title
   font-size: variaveis.$font-size-title
@@ -33,14 +37,14 @@
   align-items: variaveis.$align-center
   justify-content: variaveis.$justify-center
   gap: variaveis.$gap-default
-  flex-wrap: wrap
-  width: 70%
+  flex-wrap: variaveis.$flex-wrap
+  width: 100%
   margin: variaveis.$margin-auto
 
 .contact__form button
-  width: 67%
-  max-width: 100%
-  display: block
+  width: 100%
+  max-width: 320px
+  display: variaveis.$display-block
   border-radius: variaveis.$radius-default
 
 .contact__form-group
@@ -50,10 +54,13 @@
 #email
   padding: variaveis.$padding-large variaveis.$padding-medium
   border-radius: variaveis.$radius-default
-  text-decoration: none
+  text-decoration: variaveis.$text-decoration-none
   margin: variaveis.$margin-medium
   border: variaveis.$border-none
   font-size: variaveis.$font-size-base
 
 section:last-of-type
   padding-bottom: 0
+
+
+

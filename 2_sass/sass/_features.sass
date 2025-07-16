@@ -1,56 +1,100 @@
 @use 'variaveis';
 
 .tab-underline 
-  border-bottom: variaveis.$border-bottom-default variaveis.$text-dark
+  border-bottom: variaveis.$border-bottom-default variaveis.$black
   justify-content: variaveis.$justify-center
   width: 100%
   margin-bottom: variaveis.$margin-medium
+
 
 
 .features-container-list 
   display: variaveis.$display-flex
   list-style: variaveis.$list-style-none
   text-align: variaveis.$text-align-center
-  padding-bottom: 30px
+  padding-bottom: variaveis.$padding-large
   font-size: variaveis.$font-size-title
-  justify-content: space-around
+  justify-content: variaveis.$justify-content-space-around
 
 
 .features-container-list a 
   color: variaveis.$gray-light
   padding-bottom: variaveis.$padding-large
   font-size: variaveis.$font-size-description
-  text-decoration: none
+  text-decoration: variaveis.$text-decoration-none
   border-bottom: variaveis.$border-bottom-default variaveis.$text-dark
-  transition: color 0.5s, border-bottom 0.5s
+  transition: variaveis.$transition-default //color 0.5s, border-bottom 0.5s
 
 
 .features-container-list a:hover 
-  color: variaveis.$text-dark
+  color: variaveis.$black
   border-bottom: variaveis.$border-bottom-default variaveis.$text-dark
 
 
 .tab-content 
-  display: none
+  display: variaveis.$display-none
 
 .tab-content:target 
-  display: block
+  display: variaveis.$display-block
 
 
 .tab-content--default 
-  display: block
+  display: variaveis.$display-block
 
 
 .tab-content:target ~ .tab-content--default 
-    display: none
+    display: variaveis.$display-none
 
 
 #tab-speedy:target ~ #tab-easy,
 #tab-easy:target ~ #tab-speedy 
-  display: none
+  display: variaveis.$display-none
 
 
 .tab-content:first-of-type:target,
 .tab-content:first-of-type:not(:target) 
-  display: block
+  display: variaveis.$display-block
 
+@media (max-width: 768px)
+
+  .features-container-list
+    flex-direction: column
+    align-items: center
+    gap: 8px
+    font-size: 18px
+    padding-bottom: 10px
+
+  .features-container-list li
+    width: 100%
+    text-align: center
+
+  .features-container-list a
+    font-size: 16px
+    padding-bottom: 8px
+
+  .tab-underline
+    margin-bottom: 10px
+
+
+@media (max-width: 991px)
+
+  .features-container-list
+    flex-direction: column
+    align-items: center
+    gap: 10px
+    font-size: 20px
+    padding-bottom: 10px
+
+  .features-container-list a
+    font-size: 18px
+    padding-bottom: 8px
+
+  .tab-content .section-content
+    flex-direction: column-reverse
+    gap: 20px
+    align-items: center
+    text-align: center
+
+  .tab-content .section__image
+    max-width: 320px
+    margin: 0 auto

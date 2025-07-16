@@ -1,10 +1,10 @@
 @use 'variaveis'
 
 .header
-  padding: 30px 50px
-  justify-content: space-around
-  flex-direction: row
-  position: fixed
+  padding: variaveis.$padding-large variaveis.$padding-xxlarge
+  justify-content: variaveis.$justify-content-space-around
+  flex-direction: variaveis.$flex-row
+  position: variaveis.$position-fixed
   top: 0
   left: 0
   width: 100vw
@@ -16,42 +16,181 @@
   width: 100%
 
 .header__container
-  display: flex
-  align-items: center
-  justify-content: space-between
-  margin: 0 auto
-  flex-direction: row
+  display: variaveis.$display-flex
+  align-items: variaveis.$align-items-center
+  justify-content: variaveis.$justify-content-space-between
+  margin: variaveis.$margin-auto
+  flex-direction: variaveis.$flex-row
   width: 100%
 
 .header__logo-image
-  width: 50px
-  height: 50px
+  width: variaveis.$width-small
+  height: variaveis.$height-samll
   background-color: variaveis.$primary
-  padding: 10px
+  padding: variaveis.$padding-small
 
 .header__list
-  display: flex
-  gap: 20px
-  margin-bottom: 20px
+  display: variaveis.$display-flex
+  gap: variaveis.$gap-medium
+  margin-bottom: variaveis.$margin-medium
   background-color: variaveis.$primary
   margin-left: auto
   margin-right: 20px
-  align-self: flex-end
+  align-self: variaveis.$align-self-flex-end
 
 .header__list-item
-  list-style: none
+  list-style: variaveis.$list-style-none
   background-color: variaveis.$primary
-  gap: 10px
-  font-size: 22px
-  text-decoration: none
-  color: rgba(0, 0, 0, 0.371)
-  padding: 10px 30px
-  cursor: pointer
+  gap: variaveis.$gap-small
+  font-size: variaveis.$font-size-description
+  text-decoration: variaveis.$text-decoration-none
+  color: variaveis.$black
+  padding: variaveis.$padding-small variaveis.$padding-xlarge
+  cursor: variaveis.$cursor-pointer
 
 .header__list-link
-  color: rgba(0, 0, 0, 0.371)
-  text-decoration: none
-  transition: color 0.3s ease
+  color: variaveis.$black
+  text-decoration: variaveis.$text-decoration-none
+  transition: variaveis.$transition-default
 
 .header__list-link:hover
-  border-bottom: 2px solid variaveis.$danger
+  border-bottom: variaveis.$border-bottom-default variaveis.$black
+
+.menu-toggle
+  display: none
+  background: none
+  border: none
+  cursor: pointer
+  padding: 12px
+  z-index: 2000
+
+  .menu-icon
+    display: block
+    width: 28px
+    height: 3px
+    background: variaveis.$black
+    position: relative
+    border-radius: 2px
+    transition: background 0.3s
+
+    &::before, &::after
+      content: ''
+      display: block
+      width: 28px
+      height: 3px
+      background: variaveis.$black
+      position: absolute
+      border-radius: 2px
+      transition: transform 0.3s
+
+    &::before
+      top: -9px
+    &::after
+      top: 9px
+
+
+@media (max-width: 991px)
+  .menu-toggle
+    display: block
+    background: none
+    border: none
+    cursor: pointer
+    padding: 12px
+    z-index: 2001
+
+  .header__list
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background: #232946
+    flex-direction: column !important
+    align-items: center
+    justify-content: flex-start
+    padding-top: 32px
+    z-index: 2000
+
+  .header__list.open
+    display: flex
+
+  .header__list-item
+
+    text-align: center
+    color: variaveis.$black
+    font-size: 22px
+    letter-spacing: 2px
+    font-weight: 500
+    padding: 24px 0 16px 0
+    border-bottom: 1px solid variaveis.$transparent
+    transition: background 0.2s
+    background-color: variaveis.$transparent
+
+    &:last-child
+      border-bottom: none
+
+    a, button
+      color: #fff
+      background: none
+      border: none
+      font-size: inherit
+      font-family: inherit
+      letter-spacing: inherit
+      font-weight: inherit
+      width: 100%
+      text-align: center
+      padding: 0
+      cursor: pointer
+
+    a:hover, button:hover
+      background: rgba(255,255,255,0.05)
+
+    .header__list-social
+      display: flex
+      flex-direction: row !important
+      gap: 16px
+      margin-top: 32px
+      border-bottom: none
+      position: relative
+      left: 0
+      right: 0
+      bottom: 0
+      align-items: center
+      justify-content: center
+      width: 100%
+
+
+    .header__social-link
+      display: block
+      margin: 0 auto
+
+    .header__social-link img
+      height: 32px
+      filter: brightness(0) invert(1)
+
+
+  @media (max-width: 768px)
+    .header, .footer
+      flex-direction: column
+      align-items: center
+      padding: 10px
+      font-size: 16px
+      gap: 10px
+
+    .header__container, .footer-container
+      flex-direction: column
+      align-items: center
+      gap: 10px
+      width: 100%
+      padding: 0 8px
+
+    .header__list
+      flex-direction: row
+      align-items: center
+      gap: 8px
+      margin: 0
+      justify-content: center
+
+
+

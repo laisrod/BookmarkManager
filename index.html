@@ -22,13 +22,23 @@
                         <img src="img/logo-bookmark.svg" alt="Logo Bookmark Manager" />
                     </div>
 
+                    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                      <span class="menu-icon"></span>
+                    </button>
+
                     <ul class="header__list">
                         <li class="header__list-item"><a class="header__list-link" href="#features">FEATURES</a></li>
                         <li class="header__list-item"><a class="header__list-link" href="#pricing">PRICING</a></li>
                         <li class="header__list-item"><a class="header__list-link" href="#contact">CONTACT</a></li>
+                        <li class="header__list-item">
+                          <button class="btn btn--secondary btn--xlarge">LOGIN</button>
+                        </li>
+                        <li class="header__list-item header__list-social">
+                          <a href="#" class="header__social-link"><img src="img/icon-facebook.svg" alt="Facebook"></a>
+                          <a href="#" class="header__social-link"><img src="img/icon-twitter.svg" alt="Twitter"></a>
+                        </li>
                     </ul>
                     
-                    <button class="btn btn--secondary btn--xlarge">LOGIN</button>
                 </div>
             </nav>
         </header>
@@ -41,8 +51,9 @@
                         <h1 class="section__text-title">A Simple Bookmark Manager</h1>
                         <p class="section__text-description">A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly try it for free.</p>
                         <div class="btn-group">
-                            <button class="btn btn--chrome btn--large">Get it on Chrome</button>
-                            <button class="btn btn--firefox btn--large">Get it on Firefox</button>
+                            <button class="btn btn--chrome btn--xlarge btn__text">Get it on Chrome</button>
+                            <button class="btn btn--firefox btn--xlarge btn__text">Get it on Firefox</button>
+
                         </div>
                     </div>
                     
@@ -214,7 +225,7 @@
         </section>
 
         <!-- contact-->
-        <section class="section">
+        <section class="section contact-section">
           <div class="contact">
             <div class="contact__container">
               <p class="contact__description">35,000 + ALREADY JOINED</p>
@@ -265,6 +276,15 @@
           </div>
         </footer>
     </main>
+    <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menuList = document.querySelector('.header__list');
+      menuToggle.addEventListener('click', function() {
+        menuList.classList.toggle('open');
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !expanded);
+      });
+    </script>
 </body>
 </html>
 <!--

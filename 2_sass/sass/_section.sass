@@ -3,48 +3,49 @@
 .section
   width: 100%
   padding: variaveis.$padding-section
-  margin: 0 auto
-  display: flex
+  margin: variaveis.$margin-auto
+  display: variaveis.$display-flex
+  padding-botom: 0;
 
 .section-center
-  justify-content: center
-  align-items: center
+  justify-content: variaveis.$justify-center
+  align-items: variaveis.$align-center
 
 .section__text--center
-  text-align: center
+  text-align: variaveis.$text-align-center
 
 .section__text-title
-  font-size: 55px
-  font-weight: bold
-  padding-bottom: 35px
+  font-size: variaveis.$font-size-h1
+  font-weight: variaveis.$font-weight-bold
+  padding-bottom: variaveis.$padding-xlarge
 
 .section__text-title-small
-  font-size: 45px
-  font-weight: bold
-  padding: 20px 0 20px
+  font-size: variaveis.$font-size-h1
+  font-weight: variaveis.$font-weight-bold
+  padding: variaveis.$padding-medium2 0 variaveis.$padding-medium2
 
 .section__text-description
-  font-size: 32px
-  padding-bottom: 18px
-  margin-bottom: 30px
+  font-size: variaveis.$font-size-title
+  padding-bottom: variaveis.$padding-medium2
+  margin-bottom: variaveis.$margin-large
   color: variaveis.$gray
-  line-height: 1.3
+  line-height: variaveis.$line-height-default
 
 .section-container
   width: 100%
-  max-width: variaveis.$max-width
-  margin: 0 auto
-  padding-left: 24px
-  padding-right: 24px
-  box-sizing: border-box
+  margin: variaveis.$margin-auto
+  padding-left: variaveis.$padding-medium2
+  padding-right: variaveis.$padding-medium2
+  box-sizing: variaveis.$box-sizing-border-box
+    max-width: 600px // ou o valor que preferir
 
 .section-content
-  display: flex
-  align-items: center
-  gap: 80px
+  display: variaveis.$display-flex
+  align-items: variaveis.$align-items-center
+  gap: variaveis.$section-content-gap
 
 .section-content-reverse
-  flex-direction: row-reverse
+  flex-direction: variaveis.$flex-direction-row-reverse
 
 .section__text
   flex: 1
@@ -56,45 +57,127 @@
 
 .section__image__trans img:hover
   transform: translateY(-10px) scale(1.03)
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18)
+  box-shadow: 0 variaveis.$padding-extra-small variaveis.$padding-extra-medium variaveis.$black
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1)
 
 .section-1
   width: 100vw
   margin-top: 120px
 
+.section > .contact
+  width: 100vw
+  max-width: 100vw
+  margin-left: 50%
+  transform: translateX(-50%)
+  padding-left: 0 !important
+  padding-right: 0 !important
+
+.section.contact-section
+  padding: 0
+  margin: 0
+  background: variaveis.$secondary
+
+.section.contact-section > .contact
+  width: 100vw
+  max-width: 100vw
+  position: relative
+  left: 50%
+  right: 50%
+  margin-left: -50vw
+  margin-right: -50vw
+  padding-left: 0 !important
+  padding-right: 0 !important
+  display: flex
+  justify-content: center
+
 @media (max-width: variaveis.$mobile)
   .section-container
     width: 100%
     max-width: variaveis.$max-width
-    margin: 0 auto
-    padding-left: 16px
-    padding-right: 16px
-    box-sizing: border-box
+    margin: variaveis.$margin-auto
+    padding-left: variaveis.$padding-medium
+    padding-right: variaveis.$padding-medium
+    box-sizing: variaveis.$box-sizing-border-box
   .section-content
+    flex-direction: variaveis.$flex-direction-column-reverse
+    gap: 8px
+    align-items: variaveis.$align-center
+    justify-content: variaveis.$justify-center
+  .section__text
+    text-align: variaveis.$text-align-center
+    width: 100%
+    padding: 0 variaveis.$padding-small
+  .section-1
+    margin-top: variaveis.$margin-top
+  .section-1, .section
+    scroll-margin-top: variaveis.$scroll-margin-top
+  .section__text-title
+    font-size: variaveis.$font-size-title
+    padding-bottom: variaveis.$padding-medium
+  .section__text-description
+    font-size: variaveis.$font-size-base
+    margin-bottom: variaveis.$margin-medium
+    padding-bottom: variaveis.$padding-extra-small
+  .section__image
+    width: 100%
+    max-width: variaveis.$max-width-img
+    margin: variaveis.$margin-auto
+  .section__image img
+    width: 100%
+    margin-bottom: 0
+
+@media (max-width: 768px)
+
+  .section, .section-content
     flex-direction: column-reverse
     gap: 8px
     align-items: center
     justify-content: center
+    padding: 24px 8px
+
   .section__text
     text-align: center
     width: 100%
     padding: 0 10px
-  .section-1
-    margin-top: 150px
-  .section-1, .section
-    scroll-margin-top: 120px
-  .section__text-title
-    font-size: 32px
-    padding-bottom: 15px
-  .section__text-description
-    font-size: 16px
-    margin-bottom: 16px
-    padding-bottom: 8px
+
   .section__image
     width: 100%
-    max-width: 380px
+    max-width: 320px
     margin: 0 auto
-  .section__image img
-    width: 100%
-    margin-bottom: 0
+
+
+@media (max-width: 991px)
+  .section
+    padding: 60px 10px 40px 10px
+    margin: 0 auto
+
+  .section-1
+    margin-top: 120px
+    padding-top: 0 !important
+
+  .tab-content .section__text
+    text-align: center
+    max-width: 600px
+    margin: 0 auto
+
+  .section__text-title
+    font-size: 32px
+    padding-bottom: 18px
+
+  .section__text-description
+    font-size: 18px
+    margin-bottom: 12px
+    padding-bottom: 6px
+
+  .section-content
+    flex-direction: column-reverse
+    gap: 20px
+    align-items: center
+    margin: auto 0
+
+  .section__image
+    max-width: 400px
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    align-items: center
