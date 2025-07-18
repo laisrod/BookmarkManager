@@ -1,4 +1,5 @@
 @use 'variaveis'
+@use "sass:color";
 
 .btn
   border-radius: variaveis.$radius-default
@@ -7,6 +8,7 @@
   text-align: variaveis.$text-align-center
   transition: variaveis.$transition-default
   font-weight: variaveis.$font-weight-bold
+  border: none
 
 .btn__text
   display: variaveis.$display-inline-block
@@ -16,8 +18,16 @@
   color: variaveis.$primary
 
 .btn--secondary
-  background-color: variaveis.$danger
-  color: variaveis.$primary
+  background: variaveis.$danger
+  color: #fff
+  border-radius: 5px
+  padding: 12px 32px
+  font-weight: bold
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12)
+  transition: background 0.2s
+
+  &:hover
+    background: color.adjust(variaveis.$danger, $lightness: -10%)
 
 .btn--chrome
   background-color: variaveis.$secondary
@@ -67,16 +77,17 @@
 
 @media (max-width: 768px)
   .btn
+    //padding: variaveis.$btn-padding-small
     font-size: variaveis.$font-size-base
-    padding: 10px 0
     width: 100%
     max-width: 240px
     min-width: 0
-    margin: 0 auto
+    //margin: 0 auto
+    margin-top: 24px
 
   .btn--small,
   .btn--medium,
   .btn--large,
   .btn--xlarge
     font-size: variaveis.$font-size-base
-    padding: 10px 0
+    padding: variaveis.$padding-medium 0//10px 0

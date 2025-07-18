@@ -21,11 +21,12 @@
                   <div class="header__logo-image">
                         <img src="img/logo-bookmark.svg" alt="Logo Bookmark Manager" />
                     </div>
-
                     <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
                       <span class="menu-icon"></span>
                     </button>
 
+                    <button class="menu-close" aria-label="Fechar menu" style="display: none;">&times;</button>
+                    
                     <ul class="header__list">
                         <li class="header__list-item"><a class="header__list-link" href="#features">FEATURES</a></li>
                         <li class="header__list-item"><a class="header__list-link" href="#pricing">PRICING</a></li>
@@ -40,6 +41,7 @@
                     </ul>
                     
                 </div>
+                
             </nav>
         </header>
         <!-- pagina1 -->
@@ -76,7 +78,7 @@
                 </div>
 
                 <ul class="features-container-list">
-                    <li><a href="#tab-bookmark">Simple Bookmarking</a></li>
+                    <li class="active"><a href="#tab-bookmark">Simple Bookmarking</a></li>
                     <li><a href="#tab-speedy">Speedy Searching</a></li>
                     <li><a href="#tab-easy">Easy Sharing</a></li>
                 </ul>
@@ -92,7 +94,7 @@
                       <p class="section__text-description">
                         Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.
                       </p>
-                      <button class="btn btn--primary btn--large">More Info</button>
+                      <button class="btn btn--primary btn--medium">More Info</button>
                     </div>
                     <div class="section__image section__image__trans">
                       <img src="img/illustration-features-tab-2.svg" alt="Interface Speedy" />
@@ -217,8 +219,8 @@
                                   </p>
                                 </div>
                             </details>
-                            <button class="btn btn--primary btn--xlarge btn--auto btn__text">More Info</button>
                         </div>
+                        <button class="btn btn--primary btn--medium btn__text">More Info</button>
                     </div>
                 </div>
             </div>
@@ -277,12 +279,32 @@
         </footer>
     </main>
     <script>
-      const menuToggle = document.querySelector('.menu-toggle');
-      const menuList = document.querySelector('.header__list');
-      menuToggle.addEventListener('click', function() {
-        menuList.classList.toggle('open');
-        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', !expanded);
+
+const menuToggle = document.querySelector('.menu-toggle');
+const menuList = document.querySelector('.header__list');
+const menuClose = document.querySelector('.menu-close');
+
+menuToggle.addEventListener('click', function() {
+  menuList.classList.toggle('open');
+  menuToggle.classList.add('hide');
+  menuClose.classList.add('show');
+  const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+  menuToggle.setAttribute('aria-expanded', !expanded);
+});
+
+menuClose.addEventListener('click', function() {
+  menuList.classList.remove('open');
+  menuToggle.classList.remove('hide');
+  menuClose.classList.remove('show');
+  menuToggle.setAttribute('aria-expanded', false);
+});
+
+      // Script para alternar a classe 'active' nas abas de features
+      document.querySelectorAll('.features-container-list a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          document.querySelectorAll('.features-container-list li').forEach(li => li.classList.remove('active'));
+          this.parentElement.classList.add('active');
+        });
       });
     </script>
 </body>

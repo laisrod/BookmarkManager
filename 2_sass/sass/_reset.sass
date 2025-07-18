@@ -8,7 +8,39 @@
 
 html, body
   width: 100%
+  max-width: 100vw
   overflow-x: hidden
   background-color: variaveis.$primary
   font-family: variaveis.$font-main
   margin: variaveis.$margin-auto
+  position: relative
+
+main
+  width: 100%
+  max-width: 100vw
+  overflow-x: hidden
+  position: relative
+
+// Debug visual temporário - remova depois
+body, html, main, .header, .section, .section-1, .header__list, .section-container
+  outline: 1px solid red
+
+// Garantir que imagens não ultrapassem a tela
+img, iframe
+  max-width: 100%
+  height: auto
+  display: block
+
+// Prevenir deslizamento horizontal em mobile e tablet
+@media (max-width: 991px)
+  html, body
+    width: 100%
+    max-width: 100vw
+    overflow-x: hidden
+    position: relative
+  
+  main
+    width: 100%
+    max-width: 100vw
+    overflow-x: hidden
+    position: relative

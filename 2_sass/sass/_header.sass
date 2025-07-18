@@ -1,13 +1,13 @@
 @use 'variaveis'
 
 .header
-  padding: variaveis.$padding-large variaveis.$padding-xxlarge
+  padding: 12px 24px
   justify-content: variaveis.$justify-content-space-around
   flex-direction: variaveis.$flex-row
   position: variaveis.$position-fixed
   top: 0
   left: 0
-  width: 100vw
+  width: 100%
   z-index: 1000
   background: variaveis.$primary
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.121)
@@ -24,10 +24,11 @@
   width: 100%
 
 .header__logo-image
-  width: variaveis.$width-small
-  height: variaveis.$height-samll
-  background-color: variaveis.$primary
-  padding: variaveis.$padding-small
+  margin: 0 auto
+  display: block
+  width: 60px
+  height: 60px
+  padding: 0
 
 .header__list
   display: variaveis.$display-flex
@@ -37,6 +38,7 @@
   margin-left: auto
   margin-right: 20px
   align-self: variaveis.$align-self-flex-end
+  align-items: variaveis.$align-items-center
 
 .header__list-item
   list-style: variaveis.$list-style-none
@@ -49,7 +51,7 @@
   cursor: variaveis.$cursor-pointer
 
 .header__list-link
-  color: variaveis.$black
+  color: variaveis.$gray
   text-decoration: variaveis.$text-decoration-none
   transition: variaveis.$transition-default
 
@@ -57,140 +59,175 @@
   border-bottom: variaveis.$border-bottom-default variaveis.$black
 
 .menu-toggle
-  display: none
+  display: block
+  position: fixed
+  top: 24px
+  right: 24px
+  z-index: 9999
   background: none
   border: none
+  font-size: 32px
+  color: #222
   cursor: pointer
-  padding: 12px
-  z-index: 2000
 
-  .menu-icon
-    display: block
-    width: 28px
-    height: 3px
-    background: variaveis.$black
-    position: relative
-    border-radius: 2px
-    transition: background 0.3s
-
-    &::before, &::after
-      content: ''
-      display: block
-      width: 28px
-      height: 3px
-      background: variaveis.$black
-      position: absolute
-      border-radius: 2px
-      transition: transform 0.3s
-
-    &::before
-      top: -9px
-    &::after
-      top: 9px
+.menu-toggle.hide
+  display: none
 
 
-@media (max-width: 991px)
-  .menu-toggle
-    display: block
+@media (max-width: 768px)
+
+  .menu-close
+    display: none !important
+    position: fixed
+    top: 24px
+    right: 24px
+    z-index: 10001
     background: none
     border: none
+    font-size: 40px
+    color: #fff
     cursor: pointer
-    padding: 12px
-    z-index: 2001
 
+  .menu-close.show
+    display: block !important
+
+
+@media (max-width: 768px)
   .header__list
     display: none
     position: fixed
     top: 0
     left: 0
-    width: 100vw
+    right: 0
+    width: 100%
     height: 100vh
-    background: #232946
-    flex-direction: column !important
+    background: variaveis.$dark-blue
+    flex-direction: column
     align-items: center
     justify-content: flex-start
-    padding-top: 32px
-    z-index: 2000
+    padding-top: variaveis.$padding-xlarge
+    margin: 0 !important
+    z-index: 2001
 
   .header__list.open
     display: flex
 
   .header__list-item
-
-    text-align: center
+    text-align: variaveis.$text-align-center
     color: variaveis.$black
-    font-size: 22px
-    letter-spacing: 2px
-    font-weight: 500
-    padding: 24px 0 16px 0
-    border-bottom: 1px solid variaveis.$transparent
-    transition: background 0.2s
-    background-color: variaveis.$transparent
-
+    font-size: variaveis.$font-size-description
+    letter-spacing: variaveis.$letter-spacing-default
+    font-weight: variaveis.$font-weight
+    padding: 16px 0
+    background: transparent
+    border-bottom: 1px solid rgba(255,255,255,0.05)
+    transition: background variaveis.$transition-default
+    width: 100%
     &:last-child
       border-bottom: none
-
     a, button
       color: #fff
-      background: none
-      border: none
+      background: variaveis.$background-none
+      border: variaveis.$border-none
       font-size: inherit
       font-family: inherit
       letter-spacing: inherit
       font-weight: inherit
       width: 100%
-      text-align: center
+      text-align: variaveis.$text-align-center
       padding: 0
-      cursor: pointer
-
+      cursor: variaveis.$cursor-pointer
     a:hover, button:hover
-      background: rgba(255,255,255,0.05)
-
+      background: variaveis.$translucent-white
     .header__list-social
-      display: flex
-      flex-direction: row !important
-      gap: 16px
-      margin-top: 32px
-      border-bottom: none
-      position: relative
+      display: variaveis.$display-flex
+      flex-direction: variaveis.$flex-direction-row !important
+      gap: variaveis.$gap-small2
+      margin-top: variaveis.$margin-large
+      border-bottom: variaveis.$border-none
+      position: variaveis.$position-relative
       left: 0
       right: 0
       bottom: 0
-      align-items: center
-      justify-content: center
+      align-items: variaveis.$align-items-center
+      justify-content: variaveis.$justify-content-center
       width: 100%
-
-
     .header__social-link
-      display: block
-      margin: 0 auto
-
+      display: variaveis.$display-block
+      margin: variaveis.$margin-auto
     .header__social-link img
-      height: 32px
+      height: variaveis.$height-medium
       filter: brightness(0) invert(1)
 
+  .header, .footer
+    flex-direction: variaveis.$flex-direction-column
+    align-items: variaveis.$align-items-center
+    padding: variaveis.$padding-small
+    font-size: variaveis.$font-size-base
+    gap: variaveis.$gap-small
 
-  @media (max-width: 768px)
-    .header, .footer
-      flex-direction: column
-      align-items: center
-      padding: 10px
-      font-size: 16px
-      gap: 10px
+  .header__container, .footer-container
+    flex-direction: variaveis.$flex-direction-column
+    align-items: variaveis.$align-items-center
+    gap: variaveis.$gap-small
+    width: 100%
+    padding: 0 variaveis.$padding-extra-small
 
-    .header__container, .footer-container
-      flex-direction: column
-      align-items: center
-      gap: 10px
-      width: 100%
-      padding: 0 8px
+  .menu-toggle
+    display: block !important
+    position: fixed
+    top: 24px
+    right: 24px
+    z-index: 9999
+    background: none
+    border: none
+    font-size: 32px
+    color: #222
+    cursor: pointer
 
-    .header__list
-      flex-direction: row
-      align-items: center
-      gap: 8px
-      margin: 0
-      justify-content: center
+  .menu-toggle.hide
+    display: none !important
+
+@media (max-width: 991px)
+  .header
+    padding: 4px 8px
+  .header__list
+    margin-left: auto
+    margin-right: 0
+
+  .header__list-item
+    font-size: 18px
+    padding: 14px 18px
+    margin-top: 12px
+
+  .btn.btn--secondary, .btn.btn--xlarge, .btn.btn--small
+    font-size: 16px
+    padding: 14px 18px
+    margin-top: 12px
+
+.menu-icon
+  display: block
+  width: 32px
+  height: 4px
+  background: #222 // ou #fff se o fundo for escuro
+  border-radius: 2px
+  position: relative
+
+  &::before, &::after
+    content: ''
+    display: block
+    width: 32px
+    height: 4px
+    background: #222 // ou #fff
+    border-radius: 2px
+    position: absolute
+    left: 0
+
+  &::before
+    top: -10px
+
+  &::after
+    top: 10px
 
 
 

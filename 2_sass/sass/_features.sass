@@ -1,12 +1,10 @@
 @use 'variaveis';
 
 .tab-underline 
-  border-bottom: variaveis.$border-bottom-default variaveis.$black
+  border-bottom: variaveis.$border-bottom-default variaveis.$gray
   justify-content: variaveis.$justify-center
   width: 100%
   margin-bottom: variaveis.$margin-medium
-
-
 
 .features-container-list 
   display: variaveis.$display-flex
@@ -22,7 +20,6 @@
   padding-bottom: variaveis.$padding-large
   font-size: variaveis.$font-size-description
   text-decoration: variaveis.$text-decoration-none
-  border-bottom: variaveis.$border-bottom-default variaveis.$text-dark
   transition: variaveis.$transition-default //color 0.5s, border-bottom 0.5s
 
 
@@ -54,6 +51,18 @@
 .tab-content:first-of-type:target,
 .tab-content:first-of-type:not(:target) 
   display: variaveis.$display-block
+
+.features-container-list a[href="#tab-bookmark"]:target,
+.features-container-list a[href="#tab-speedy"]:target,
+.features-container-list a[href="#tab-easy"]:target
+  color: variaveis.$text-dark
+  border-bottom: variaveis.$border-bottom-default variaveis.$danger
+  font-weight: bold
+
+.features-container-list li.active
+  border-bottom: none
+
+  
 
 @media (max-width: 768px)
 
@@ -98,3 +107,8 @@
   .tab-content .section__image
     max-width: 320px
     margin: 0 auto
+
+.features-container-list li.active a
+  color: variaveis.$text-dark
+  border-bottom: variaveis.$border-bottom-default variaveis.$danger !important
+  font-weight: bold
