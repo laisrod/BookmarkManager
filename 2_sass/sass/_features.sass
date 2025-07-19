@@ -3,7 +3,7 @@
 .tab-underline 
   border-bottom: variaveis.$border-bottom-default variaveis.$gray
   justify-content: variaveis.$justify-center
-  width: 100%
+  width: variaveis.$max-width-default
   margin-bottom: variaveis.$margin-medium
 
 .features-container-list 
@@ -57,58 +57,58 @@
 .features-container-list a[href="#tab-easy"]:target
   color: variaveis.$text-dark
   border-bottom: variaveis.$border-bottom-default variaveis.$danger
-  font-weight: bold
+  font-weight: variaveis.$font-weight-bold
 
 .features-container-list li.active
-  border-bottom: none
+  border-bottom: variaveis.$border-none
 
   
 
-@media (max-width: 768px)
+@media (max-width: variaveis.$mobile)
 
   .features-container-list
-    flex-direction: column
-    align-items: center
-    gap: 8px
-    font-size: 18px
-    padding-bottom: 10px
+    flex-direction: variaveis.$flex-direction-column
+    align-items: variaveis.$align-center
+    gap: variaveis.$gap-small
+    font-size: variaveis.$font-size-title
+    padding-bottom: variaveis.$padding-small
 
   .features-container-list li
-    width: 100%
-    text-align: center
+    width: variaveis.$max-width-default
+    text-align: variaveis.$text-align-center
 
   .features-container-list a
-    font-size: 16px
-    padding-bottom: 8px
+    font-size: variaveis.$font-size-description
+    padding-bottom: variaveis.$padding-small
 
   .tab-underline
-    margin-bottom: 10px
+    margin-bottom: variaveis.$margin-small
 
 
-@media (max-width: 991px)
+@media (max-width: variaveis.$tablet)
 
   .features-container-list
-    flex-direction: column
-    align-items: center
-    gap: 10px
-    font-size: 20px
-    padding-bottom: 10px
+    flex-direction: variaveis.$flex-direction-column
+    align-items: variaveis.$align-center
+    gap: variaveis.$gap-small
+    font-size: variaveis.$font-size-title
+    padding-bottom: variaveis.$padding-small
 
   .features-container-list a
-    font-size: 18px
-    padding-bottom: 8px
+    font-size: variaveis.$font-size-description
+    padding-bottom: variaveis.$padding-small
 
   .tab-content .section-content
-    flex-direction: column-reverse
-    gap: 20px
-    align-items: center
-    text-align: center
+    flex-direction: variaveis.$flex-direction-column-reverse
+    gap: variaveis.$gap-medium
+    align-items: variaveis.$align-center
+    text-align: variaveis.$text-align-center
 
   .tab-content .section__image
-    max-width: 320px
-    margin: 0 auto
+    max-width: variaveis.$max-width-default
+    margin: variaveis.$margin-auto
 
 .features-container-list li.active a
   color: variaveis.$text-dark
   border-bottom: variaveis.$border-bottom-default variaveis.$danger !important
-  font-weight: bold
+  font-weight: variaveis.$font-weight-bold

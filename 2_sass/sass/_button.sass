@@ -1,5 +1,6 @@
 @use 'variaveis'
-@use "sass:color";
+@use 'sass:color'
+
 
 .btn
   border-radius: variaveis.$radius-default
@@ -19,12 +20,12 @@
 
 .btn--secondary
   background: variaveis.$danger
-  color: #fff
-  border-radius: 5px
-  padding: 12px 32px
-  font-weight: bold
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12)
-  transition: background 0.2s
+  color: variaveis.$white
+  border-radius: variaveis.$radius-default
+  padding: variaveis.$padding-small variaveis.$padding-xlarge
+  font-weight: variaveis.$font-weight-bold
+  box-shadow: variaveis.$shadow-default
+  transition: variaveis.$transition-fast
 
   &:hover
     background: color.adjust(variaveis.$danger, $lightness: -10%)
@@ -32,11 +33,15 @@
 .btn--chrome
   background-color: variaveis.$secondary
   color: variaveis.$primary
+  box-shadow: variaveis.$shadow-default
 
 .btn--firefox
   background-color: variaveis.$firefox-hover-bg
   color: variaveis.$text-dark
-  box-shadow: variaveis.$btn-shadow
+  box-shadow: variaveis.$shadow-default
+
+.btn--firefox:hover
+  background-color: variaveis.$firefox-hover-bg
 
 .btn--small
   padding: variaveis.$btn-padding-small
@@ -46,12 +51,17 @@
   padding: variaveis.$padding-medium variaveis.$padding-large
   font-size: variaveis.$font-size-base
 
+.btn--large
+  padding: variaveis.$btn-padding-large
+  font-size: variaveis.$font-size-base
+
+
 .btn--xlarge
   padding: variaveis.$btn-padding-xlarge
   font-size: variaveis.$font-size-description
 
 .btn--full-width
-  width: 100%
+  width: variaveis.$max-width-default
 
 .btn--auto
   margin: variaveis.$margin-auto
@@ -63,9 +73,6 @@
   opacity: variaveis.$opacity-hover
   transform: translateY(-2px)
 
-.btn--firefox:hover
-  background-color: variaveis.$firefox-hover-bg
-
 .btn--large
   padding: variaveis.$btn-padding-xlarge
   font-size: variaveis.$font-size-description
@@ -75,19 +82,23 @@
   gap: variaveis.$gap-default
   align-items: variaveis.$align-items-center
 
-@media (max-width: 768px)
+@media (max-width: variaveis.$mobile)
+  .btn-group
+    flex-direction: variaveis.$flex-direction-row
+    gap: variaveis.$gap-small
+    align-items: variaveis.$align-items-center
+    justify-content: variaveis.$justify-content-center
+
   .btn
-    //padding: variaveis.$btn-padding-small
     font-size: variaveis.$font-size-base
-    width: 100%
-    max-width: 240px
-    min-width: 0
-    //margin: 0 auto
-    margin-top: 24px
+    width: auto
+    max-width: 120px
+    min-width: variaveis.$min-width-btn
+    margin: 0
 
   .btn--small,
   .btn--medium,
   .btn--large,
   .btn--xlarge
     font-size: variaveis.$font-size-base
-    padding: variaveis.$padding-medium 0//10px 0
+    padding: variaveis.$padding-medium 0

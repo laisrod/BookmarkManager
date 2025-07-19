@@ -1,38 +1,40 @@
 @use 'variaveis'
 
 .section.contact-section
-  padding: 0
+  padding: variaveis.$padding-xxlarge 0
   margin: 0
   background: variaveis.$secondary
   color: variaveis.$white
 
   .contact
     background-color: variaveis.$transparent
-    width: 100%
-    margin: 0 auto
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
-    padding: 40px 0
+    width: variaveis.$max-width-default
+    margin: variaveis.$margin-auto
+    display: variaveis.$display-flex
+    flex-direction: variaveis.$flex-direction-column
+    align-items: variaveis.$align-center
+    justify-content: variaveis.$justify-center
+    padding: variaveis.$padding-large 0
 
     .contact__container
-      max-width: 600px
-      width: 100%
-      margin: 0 auto
-      display: flex
-      flex-direction: column
-      align-items: center
-      justify-content: center
-      text-align: center
-      padding: 0 16px
+      max-width: variaveis.$max-width-container
+      width: variaveis.$max-width-default
+      margin: variaveis.$margin-auto
+      display: variaveis.$display-flex
+      flex-direction: variaveis.$flex-direction-column
+      align-items: variaveis.$align-center
+      justify-content: variaveis.$justify-center
+      text-align: variaveis.$text-align-center
+      padding: 0 variaveis.$padding-medium
 
 .contact__title
   font-size: variaveis.$font-size-title
+  margin-bottom: variaveis.$margin-large
 
 
 .contact__description
   font-size: variaveis.$font-size-description
+  margin-bottom: variaveis.$margin-large
 
 .contact__form
   display: variaveis.$display-flex
@@ -40,29 +42,72 @@
   justify-content: variaveis.$justify-center
   gap: variaveis.$gap-default
   flex-wrap: variaveis.$flex-wrap
-  width: 100%
+  width: variaveis.$max-width-default
   margin: variaveis.$margin-auto
+  flex-direction: variaveis.$flex-direction-row
 
 .contact__form button
-  width: 100%
-  max-width: 320px
+  width: variaveis.$max-width-default
+  max-width: variaveis.$max-width-contacto
   display: variaveis.$display-block
   border-radius: variaveis.$radius-default
+  white-space: nowrap
+  height: variaveis.$height-input-btn
+  padding: variaveis.$padding-medium variaveis.$padding-medium
 
 .contact__form-group
   display: variaveis.$display-flex
   align-items: variaveis.$align-center
+  flex: 1
+  min-width: variaveis.$min-width-form-contact
 
 #email
-  padding: variaveis.$padding-large variaveis.$padding-medium
+  padding: variaveis.$padding-medium variaveis.$padding-medium
   border-radius: variaveis.$radius-default
   text-decoration: variaveis.$text-decoration-none
-  margin: variaveis.$margin-medium
+  margin: 0
   border: variaveis.$border-none
   font-size: variaveis.$font-size-base
+  width: variaveis.$max-width-default
+  height: variaveis.$height-input-btn
+  box-sizing: variaveis.$box-sizing-border-box
 
 section:last-of-type
   padding-bottom: 0
+
+
+
+@media (max-width: variaveis.$tablet)
+  .contact__form
+    flex-direction: variaveis.$flex-direction-row
+    gap: variaveis.$gap-default
+    flex-wrap: variaveis.$flex-wrap
+
+  .contact__form-group
+    flex: 1
+    min-width: variaveis.$min-width-form-contact
+
+  .contact__form button
+    max-width: variaveis.$max-width-contacto
+    white-space: nowrap
+
+@media (max-width: variaveis.$mobile)
+  .contact__form
+    flex-direction: variaveis.$flex-direction-row
+    gap: variaveis.$gap-small
+    flex-wrap: variaveis.$flex-wrap
+
+  .contact__form-group
+    flex: 1
+    min-width: variaveis.$min-width-form-contact
+
+  .contact__form button
+    max-width: variaveis.$max-width-contacto
+    white-space: nowrap
+    font-size: variaveis.$font-size-small
+    padding: variaveis.$padding-small variaveis.$padding-small
+    height: variaveis.$height-input-btn
+
 
 
 

@@ -2,7 +2,7 @@
 
 .download
   text-align: variaveis.$align-center
-  margin-bottom: 100px
+  margin-bottom: variaveis.$margin-large
 
 .download__text
   padding-bottom: variaveis.$padding-medium
@@ -13,13 +13,13 @@
   justify-content: variaveis.$justify-center
   flex-wrap: variaveis.$flex-wrap
   gap: variaveis.$gap-list
-  max-width: 100%
+  max-width: variaveis.$max-width-default
   margin: variaveis.$margin-auto
 
 .download__article-item
   box-shadow: variaveis.$card-box-shadow
   padding: variaveis.$card-padding-vertical variaveis.$card-padding-horizontal
-  max-width: 100%
+  max-width: variaveis.$max-width-default
   transition: variaveis.$transition-default
   width: variaveis.$card-width
   border-radius: variaveis.$card-radius
@@ -42,51 +42,51 @@
   color: variaveis.$text-dark
   font-size: variaveis.$font-size-description
 
-@media (max-width: 768px)
+@media (max-width: variaveis.$mobile)
   .download__article
-    flex-direction: column
-    align-items: center
-    gap: 16px
-    width: 100%
+    flex-direction: variaveis.$flex-direction-column
+    align-items: variaveis.$align-center
+    gap: variaveis.$gap-list
+    width: variaveis.$max-width-default
     padding: 0
 
   .download__article-item
-    width: 100%
-    max-width: 320px
-    margin: 0 auto
-    padding: 30px 10px
-    box-sizing: border-box
+    width: variaveis.$max-width-default
+    max-width: variaveis.$max-width-download
+    margin: variaveis.$margin-auto
+    padding: variaveis.$padding-large variaveis.$padding-small
+    box-sizing: variaveis.$box-sizing-border-box
 
   .download__img-text-article
-    margin-bottom: 12px
-    border-bottom: 3px dotted rgba(0, 0, 0, 0.2)
-    padding-bottom: 10px
+    margin-bottom: variaveis.$margin-small2
+    border-bottom: variaveis.$border-dotted-default variaveis.$text-dark
+    padding-bottom: variaveis.$padding-small
 
   .download__article-title
-    font-size: 18px
-    padding-top: 16px
-    padding-bottom: 6px
+    font-size: variaveis.$font-size-base
+    padding-top: variaveis.$padding-medium
+    padding-bottom: variaveis.$padding-small
 
   .download__article-detail
-    font-size: 13px
-    padding-bottom: 20px
+    font-size: variaveis.$font-size-small
+    padding-bottom: variaveis.$padding-large
 
-@media (max-width: 991px)
+@media (max-width: variaveis.$tablet)
 
   .download__article
-    flex-direction: column
-    gap: 20px
-    align-items: center
+    flex-direction: variaveis.$flex-direction-column
+    gap: variaveis.$gap-list
+    align-items: variaveis.$align-center
 
   .download__article-item
-    max-width: 350px
-    padding: 30px 10px
+    max-width: variaveis.$max-width-download
+    padding: variaveis.$padding-large variaveis.$padding-small
 
   .download__article-title
-    font-size: 20px
-    padding-top: 10px
-    padding-bottom: 6px
+    font-size: variaveis.$font-size-base
+    padding-top: variaveis.$padding-small
+    padding-bottom: variaveis.$padding-small
 
   .download__article-detail
-    font-size: 15px
-    padding-bottom: 16px
+    font-size: variaveis.$font-size-small
+    padding-bottom: variaveis.$padding-large

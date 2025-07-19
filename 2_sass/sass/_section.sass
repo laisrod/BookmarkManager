@@ -1,11 +1,12 @@
 @use 'variaveis'
 
 .section
-  width: 100%
+  width: variaveis.$max-width-default
+  max-width: variaveis.$max-width-vw
   padding: variaveis.$padding-section
   margin: variaveis.$margin-auto
   display: variaveis.$display-flex
-  padding-botom: 0;
+  overflow-x: variaveis.$overflow-x-hidden
 
 .section-center
   justify-content: variaveis.$justify-center
@@ -32,17 +33,19 @@
   line-height: variaveis.$line-height-default
 
 .section-container
-  width: 100%
+  width: variaveis.$max-width-default
+  max-width: variaveis.$max-width
   margin: variaveis.$margin-auto
   padding-left: variaveis.$padding-medium2
   padding-right: variaveis.$padding-medium2
   box-sizing: variaveis.$box-sizing-border-box
-    max-width: 600px // ou o valor que preferir
 
 .section-content
   display: variaveis.$display-flex
   align-items: variaveis.$align-items-center
   gap: variaveis.$section-content-gap
+  width: variaveis.$max-width-default
+  max-width: variaveis.$max-width-default
 
 .section-content-reverse
   flex-direction: variaveis.$flex-direction-row-reverse
@@ -52,8 +55,8 @@
 
 .section__image
   flex: 1
-  max-width: 100%
-  height: auto
+  max-width: variaveis.$max-width-default
+  height: variaveis.$height-auto
 
 .section__image__trans img:hover
   transform: translateY(-10px) scale(1.03)
@@ -61,14 +64,14 @@
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1)
 
 .section-1
-  width: 100%
-  margin-top: 120px
+  width: variaveis.$max-width-default
+  margin-top: variaveis.$margin-large
 
 .section > .contact
-  width: 100%
+  width: variaveis.$max-width-default
   margin: 0
-  padding-left: 0 !important
-  padding-right: 0 !important
+  padding-left: 0 
+  padding-right: 0 
 
 .section.contact-section
   padding: 0
@@ -76,16 +79,16 @@
   background: variaveis.$secondary
 
 .section.contact-section > .contact
-  width: 100%
-  position: relative
-  padding-left: 0 !important
-  padding-right: 0 !important
-  justify-content: center
-  display: flex
+  width: variaveis.$max-width-default
+  position: variaveis.$position-relative
+  padding-left: 0 
+  padding-right: 0
+  justify-content: variaveis.$justify-center
+  display: variaveis.$display-flex
 
 @media (max-width: variaveis.$mobile)
   .section-container
-    width: 100%
+    width: variaveis.$max-width-default
     max-width: variaveis.$max-width
     margin: variaveis.$margin-auto
     padding-left: variaveis.$padding-medium
@@ -93,16 +96,16 @@
     box-sizing: variaveis.$box-sizing-border-box
   .section-content
     flex-direction: variaveis.$flex-direction-column-reverse
-    gap: 8px
+    gap: variaveis.$gap-small
     align-items: variaveis.$align-center
     justify-content: variaveis.$justify-center
   .section__text
     text-align: variaveis.$text-align-center
-    width: 100%
+    width: variaveis.$max-width-default
     padding: 0 variaveis.$padding-small
   .section-1
-    margin-top: variaveis.$margin-top
-    width: 100%
+    //margin-top: variaveis.$margin-top
+    width: variaveis.$max-width-default
   .section-1, .section
     scroll-margin-top: variaveis.$scroll-margin-top
   .section__text-title
@@ -113,92 +116,93 @@
     margin-bottom: variaveis.$margin-medium
     padding-bottom: variaveis.$padding-extra-small
   .section__image
-    width: 100%
+    width: variaveis.$max-width-default
     max-width: variaveis.$max-width-img
     margin: variaveis.$margin-auto
   .section__image img
-    width: 100%
+    width: variaveis.$max-width-default
     margin-bottom: 0
+    margin-top: 0 !important
 
-@media (max-width: 768px)
+@media (max-width: variaveis.$mobile)
   .section
-    padding: 60px 16px 40px 16px
-    margin: 0 auto
+    padding: variaveis.$padding-large variaveis.$padding-small variaveis.$padding-medium
+    margin: variaveis.$margin-auto
 
   .section, .section-content
-    flex-direction: column-reverse
-    gap: 8px
-    align-items: center
-    justify-content: center
-    padding: 24px 8px
+    flex-direction: variaveis.$flex-direction-column-reverse
+    gap: variaveis.$gap-small
+    align-items: variaveis.$align-center
+    justify-content: variaveis.$justify-center
+    padding: variaveis.$padding-medium variaveis.$padding-small
 
   .section__text
-    text-align: center
-    width: 100%
-    padding: 0 10px
+    text-align: variaveis.$text-align-center
+    width: variaveis.$max-width-default
+    padding: 0 variaveis.$padding-small
 
   .section__image
-    width: 100%
-    max-width: 320px
-    margin: 0 auto
+    width: variaveis.$max-width-default
+    max-width: variaveis.$max-width-img
+    margin: variaveis.$margin-auto
 
 
 @media (max-width: 991px)
   .section
-    padding: 60px 16px 40px 16px
-    margin: 0 auto
+    padding: variaveis.$padding-extra-large variaveis.$padding-medium variaveis.$padding-xlarge variaveis.$padding-medium
+    margin: variaveis.$margin-auto
 
   .section-1
-    margin-top: 120px
-    padding-top: 0 !important
+    margin-top: variaveis.$margin-top
+    padding-top: 0 
 
   .tab-content .section__text
-    text-align: center
-    max-width: 600px
-    margin: 0 auto
+    text-align: variaveis.$text-align-center
+    max-width: variaveis.$max-width-contact
+    margin: variaveis.$margin-auto
 
   .section__text-title
-    font-size: 32px
-    padding-bottom: 18px
+    font-size: variaveis.$font-size-h1
+    padding-bottom: variaveis.$padding-small
 
   .section__text-description
-    font-size: 18px
-    margin-bottom: 12px
-    padding-bottom: 6px
+    font-size: variaveis.$font-size-base
+    margin-bottom: variaveis.$margin-medium
+    padding-bottom: variaveis.$padding-small
 
   .section-content
-    flex-direction: column-reverse
-    gap: 20px
-    align-items: center
-    margin: auto 0
+    flex-direction: variaveis.$flex-direction-column-reverse
+    gap: variaveis.$gap-medium
+    align-items: variaveis.$align-center
+    margin: variaveis.$margin-auto
 
   .section__image
-    max-width: 400px
-    margin: 0 auto
-    display: flex
-    justify-content: center
-    align-items: center
+    max-width: variaveis.$max-width-img
+    margin: variaveis.$margin-auto
+    display: variaveis.$display-flex
+    justify-content: variaveis.$justify-center
+    align-items: variaveis.$align-center
 
   .section-1 .section-content
-    flex-direction: column
-    align-items: center
-    text-align: center
+    flex-direction: variaveis.$flex-direction-column
+    align-items: variaveis.$align-center
+    text-align: variaveis.$text-align-center
 
   .section-1 .section__image
     order: -1
-    margin: 0 auto
-    display: flex
-    justify-content: center
+    margin: variaveis.$margin-auto
+    display: variaveis.$display-flex
+    justify-content: variaveis.$justify-center
 
   .section-1 .section__text
-    align-items: center
-    text-align: center
-    display: flex
-    flex-direction: column
+    align-items: variaveis.$align-center
+    text-align: variaveis.$text-align-center
+    display: variaveis.$display-flex
+    flex-direction: variaveis.$flex-direction-column
 
   .section-1 .btn-group
-    justify-content: center
-    display: flex
-    gap: 16px
+    justify-content: variaveis.$justify-center
+    display: variaveis.$display-flex
+    gap: variaveis.$gap-small
 
     
