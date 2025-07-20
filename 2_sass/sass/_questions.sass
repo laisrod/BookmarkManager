@@ -3,6 +3,9 @@
 .questions
   display: variaveis.$display-grid
   width: variaveis.$max-width-default
+  max-width: variaveis.$max-width-container
+  margin: variaveis.$margin-auto
+  padding: 0 variaveis.$padding-medium2
 
 .questions__container
   align-items: variaveis.$align-items-center
@@ -11,7 +14,7 @@
   display: variaveis.$display-grid
   flex-direction: variaveis.$flex-direction-column
   width: variaveis.$max-width-default
-  max-width: variaveis.$max-width-default
+  max-width: variaveis.$max-width-container
   margin: variaveis.$margin-auto
 
 .question__container
@@ -28,7 +31,6 @@
   display: variaveis.$display-flex
   align-items: variaveis.$align-items-center
   justify-content: variaveis.$justify-content-space-between
-  font-size: variaveis.$font-size-title
   font-weight: variaveis.$font-weight
   color: variaveis.$text-dark
   padding: variaveis.$padding-medium2 0
@@ -46,11 +48,11 @@
 
 .questions__text
   text-align: variaveis.$text-align-center
-  max-width: variaveis.$max-width
+  max-width: variaveis.$max-width-container
   margin: variaveis.$margin-auto
 
 .question__container-title
-  font-size: variaveis.$font-size-title
+  font-size: variaveis.$font-size-description
   font-weight: variaveis.$font-weight
   color: variaveis.$text-dark
   margin: 0
@@ -70,6 +72,7 @@
     display: variaveis.$display-flex
     flex-direction: variaveis.$flex-direction-column
     gap: 0
+    padding: 0 variaveis.$padding-small
 
   .question__container
     border-bottom: variaveis.$border-bottom-small variaveis.$gray-light

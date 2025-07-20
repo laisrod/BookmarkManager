@@ -1,3 +1,7 @@
+* {
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -107,3 +111,32 @@
   height: 25px;
   filter: brightness(0) invert(1);
 }
+
+.features-container-list li {
+  position: relative;
+  transition: color 0.3s;
+}
+
+.features-container-list li a {
+  position: relative;
+  z-index: 1;
+}
+
+.features-container-list li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 3px;
+  background: #e25b18; /* cor do sublinhado */
+  transition: width 0.3s;
+  border-radius: 2px;
+}
+
+.features-container-list li:hover::after,
+.features-container-list li.active::after {
+  width: 100%;
+}
+

@@ -23,7 +23,7 @@
       <a class="navbar-brand" href="#">
         <img src="img/logo-bookmark.svg" alt="Logo Bookmark Manager" class="d-inline-block align-text-top"/>
       </a>
-      <button class="navbar-toggler px-4 py-2 rounded-pill" type="button" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
+      <button class="navbar-toggler px-4 py-2 rounded-pill menu-toggle" type="button" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -54,7 +54,7 @@
         <img src="img/logo-bookmark.svg" alt="Bookmark Manager" />
         <span>BOOKMARK</span>
       </div>
-      <button class="mobile-menu-close" onclick="toggleMobileMenu()">×</button>
+      <button class="mobile-menu-close menu-close" onclick="toggleMobileMenu()">×</button>
     </div>
     
     <nav class="mobile-menu-nav">
@@ -72,11 +72,18 @@
     </div>
   </div>
   <!-- pagina1 -->
-  <section class="section section-1">
-    <div class="section-container container-fluid py-5 d-flex align-items-center">
+  <section class="section section-1" style="min-height: 100vh;">
+    <div id="section-1" class="section-container container-fluid py-5 d-flex align-items-center">
       <div class="section-content row w-100">
         
-        <div class="section__text col-lg-6 pe-lg-5 text-start">
+        <!-- Imagem: mobile acima, desktop à direita -->
+        <div class="section__image col-lg-6 position-relative d-flex justify-content-end align-items-end order-1 order-lg-2 mb-4 mb-lg-0">
+          <div class="position-absolute bottom-0 end-0 rounded-circle" style="width: 300px; height: 200px; z-index: -1; transform: translate(50px, 50px); background-color: #090cb8a4;"></div>
+          <img src="img/illustration-hero.svg" alt="Bookmark Manager" class="img-fluid w-75 position-relative" style="transform: translateY(30px);" />
+        </div>
+  
+        <!-- Texto: mobile abaixo, desktop à esquerda -->
+        <div class="section__text col-lg-6 pe-lg-5 text-start order-2 order-lg-1">
           <h1 class="section__text-title display-4 fw-bold text-dark mb-4">A Simple Bookmark Manager</h1>
           <p class="section__text-description lead text-muted mb-4">A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly try it for free.</p>
           <div class="btn-group d-flex gap-3 flex-wrap">
@@ -84,15 +91,7 @@
             <button class="btn btn-outline-secondary btn-lg px-4 py-3 shadow-sm fw-bold">Get it on Firefox</button>
           </div>
         </div>
-        
-        <div class="section__image col-lg-6 position-relative d-flex justify-content-end align-items-end">
-          <!-- Forma azul curva atrás da imagem -->
-          <div class="position-absolute bottom-0 end-0 rounded-circle" style="width: 300px; height: 200px; z-index: -1; transform: translate(50px, 50px); background-color: #090cb8a4;"></div>
-          
-          <!-- Imagem do tablet -->
-          <img src="img/illustration-hero.svg" alt="Bookmark Manager" class="img-fluid w-75 position-relative" style="transform: translateY(30px);" />
-        </div>
-
+  
       </div>
     </div>
   </section>
@@ -108,29 +107,25 @@
       </div>
 
       <ul class="features-container-list d-flex justify-content-center list-unstyled mt-5">
-        <li class="mx-3 active"><a href="#features" data-tab="tab-bookmark" class="text-dark fw-bold text-decoration-none fs-3">Simple Bookmarking</a></li>
+        <li class="mx-3 active"><a href="#features" data-tab="tab-bookmark" class="text-dark text-decoration-none fs-3">Simple Bookmarking</a></li>
         <li class="mx-3"><a href="#features" data-tab="tab-speedy" class="text-muted fw-medium text-decoration-none fs-3">Speedy Searching</a></li>
         <li class="mx-3"><a href="#features" data-tab="tab-easy" class="text-muted fw-medium text-decoration-none fs-3">Easy Sharing</a></li>
       </ul>
       
-      <div class="d-flex justify-content-center mt-2">
-        <div class="bg-danger" style="width: 120px; height: 3px;"></div>
-      </div>
+    
 
 
       <!--tab2-->
       <div id="tab-speedy" class="tab-content" style="display: none;">
         <div class="container-fluid py-5 d-flex align-items-center">
           <div class="row w-100">
-            <!-- Lado esquerdo - Ilustração -->
             <div class="col-lg-6 d-flex justify-content-center align-items-center">
               <img src="img/illustration-features-tab-2.svg" alt="Interface Speedy" class="img-fluid w-75" />
             </div>
             
-            <!-- Lado direito - Texto -->
             <div class="col-lg-6 pe-lg-5 text-start">
               <h3 class="display-5 fw-bold text-dark mb-4">Intelligent search</h3>
-              <p class="lead text-muted mb-4">
+              <p class="lead text-muted mb-3 fs-4">
                 Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.
               </p>
               <button class="btn btn-lg px-4 py-3 shadow-sm fw-bold" style="background-color: #090cb8a4; border-color: #090cb8a4; color: white;">More Info</button>
@@ -138,19 +133,16 @@
           </div>
         </div>
       </div>
-      <!-- tab 3 -->
       <div id="tab-easy" class="tab-content" style="display: none;">
         <div class="container-fluid py-5 d-flex align-items-center">
           <div class="row w-100">
-            <!-- Lado esquerdo - Ilustração -->
             <div class="col-lg-6 d-flex justify-content-center align-items-center">
               <img src="img/illustration-features-tab-3.svg" alt="Interface Speedy" class="img-fluid w-75" />
             </div>
             
-            <!-- Lado direito - Texto -->
             <div class="col-lg-6 pe-lg-5 text-start">
               <h3 class="display-5 fw-bold text-dark mb-4">Share your bookmarks</h3>
-              <p class="lead text-muted mb-4">
+              <p class="lead text-muted mb-3 fs-4">
                 Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.
               </p>
               <button class="btn btn-lg px-4 py-3 shadow-sm fw-bold" style="background-color: #090cb8a4; border-color: #090cb8a4; color: white;">More Info</button>
@@ -162,15 +154,13 @@
       <div id="tab-bookmark" class="tab-content tab-content--default" style="display: block;">
         <div class="container-fluid py-5 d-flex align-items-center">
           <div class="row w-100">
-            <!-- Lado esquerdo - Ilustração -->
             <div class="col-lg-6 d-flex justify-content-center align-items-center">
               <img src="img/illustration-features-tab-1.svg" alt="Interface Bookmark" class="img-fluid w-75" />
             </div>
             
-            <!-- Lado direito - Texto -->
             <div class="col-lg-6 pe-lg-5 text-start">
               <h3 class="display-5 fw-bold text-dark mb-4">Bookmark in one click</h3>
-              <p class="lead text-muted mb-4">
+              <p class="lead text-muted mb-3 fs-4">
                 Organize your bookmarks however you like. Our simple over how you manage your favourite sites.
               </p>
               <button class="btn btn-lg px-4 py-3 shadow-sm fw-bold" style="background-color: #090cb8a4; border-color: #090cb8a4; color: white;">More Info</button>
@@ -284,7 +274,7 @@
               <details class="question__container border-bottom pb-3 mb-3" open>
                 <summary class="question__container-title d-flex justify-content-between align-items-center fw-bold text-dark fs-5 py-3" style="cursor: pointer; list-style: none;">
                   What is Bookmark?
-                  <span class="text-danger">▲</span>
+                  <span class="text-primary">▲</span>
                 </summary>
                 <div class="question__container-response">
                   <p class="text-muted mb-0 text-start fs-5" style="line-height: 1.6;">
@@ -295,7 +285,7 @@
               <details class="question__container border-bottom pb-3 mb-3" open>
                 <summary class="question__container-title d-flex justify-content-between align-items-center fw-bold text-dark fs-5 py-3" style="cursor: pointer; list-style: none;">
                   How can I request a new browser?
-                  <span class="text-danger">▲</span>
+                  <span class="text-primary">▲</span>
                 </summary>
                 <div class="question__container-response">
                   <p class="text-muted mb-0 text-start fs-5" style="line-height: 1.6;">
@@ -306,7 +296,7 @@
               <details class="question__container border-bottom pb-3 mb-3" open>
                 <summary class="question__container-title d-flex justify-content-between align-items-center fw-bold text-dark fs-5 py-3" style="cursor: pointer; list-style: none;">
                   Is there a mobile app?
-                  <span class="text-danger">▲</span>
+                  <span class="text-primary">▲</span>
                 </summary>
                 <div class="question__container-response">
                   <p class="text-muted mb-0 text-start fs-5" style="line-height: 1.6;">
@@ -317,7 +307,7 @@
               <details class="question__container border-bottom pb-3 mb-3" open>
                 <summary class="question__container-title d-flex justify-content-between align-items-center fw-bold text-dark fs-5 py-3" style="cursor: pointer; list-style: none;">
                   What about other Chromium browsers?
-                  <span class="text-danger">▲</span>
+                  <span class="text-primary">▲</span>
                 </summary>
                 <div class="question__container-response">
                   <p class="text-muted mb-0 text-start fs-5" style="line-height: 1.6;">

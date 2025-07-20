@@ -82,17 +82,22 @@
   gap: variaveis.$gap-default
   align-items: variaveis.$align-items-center
 
+  flex-direction: variaveis.$flex-direction-row
+  justify-content: flex-start
+
+
 @media (max-width: variaveis.$mobile)
   .btn-group
-    flex-direction: variaveis.$flex-direction-row
+    flex-direction: variaveis.$flex-direction-column
     gap: variaveis.$gap-small
-    align-items: variaveis.$align-items-center
     justify-content: variaveis.$justify-content-center
+    width: 100%
+    align-items: stretch
 
   .btn
     font-size: variaveis.$font-size-base
-    width: auto
-    max-width: 120px
+    width: 100%
+    max-width: 100%
     min-width: variaveis.$min-width-btn
     margin: 0
 

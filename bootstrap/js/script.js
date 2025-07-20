@@ -2,9 +2,58 @@ const menuToggle = document.querySelector('.menu-toggle');
 const menuList = document.querySelector('.header__list');
 const menuClose = document.querySelector('.menu-close');
 
-const section = document.querySelector('.section');
+function animateHeroSection() {
+  const textSection = document.querySelector('.section__text.col-lg-6.pe-lg-5.text-start');
+  const imageSection = document.querySelector('.section__image.col-lg-6.position-relative.d-flex.justify-content-end.align-items-end');
+  const sectionContainer = document.querySelector('#section-1');
+  
+  sectionContainer.style.overflow = 'hidden';
+  textSection.style.transform = 'translateX(-100vw)';
+  textSection.style.opacity = '0';
+  textSection.style.transition = 'none';
+  
+  imageSection.style.transform = 'translateX(100vw)';
+  imageSection.style.opacity = '0';
+  imageSection.style.transition = 'none';
+  
+  setTimeout(() => {
+    textSection.style.transition = 'all 1s ease-out';
+    imageSection.style.transition = 'all 1s ease-out';
+    
+    setTimeout(() => {
+      textSection.style.transform = 'translateX(0)';
+      textSection.style.opacity = '1';
+    }, 200);
+    
+    setTimeout(() => {
+      imageSection.style.transform = 'translateX(0)';
+      imageSection.style.opacity = '1';
+    }, 400);
+    
+  }, 50);
+}
 
-console.log('SECTION', section);
+function initScrollAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateHeroSection();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.0
+  });
+  
+  const heroSection = document.querySelector('#section-1');
+  if (heroSection) {
+    observer.observe(heroSection);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  initScrollAnimations();
+});
 
 menuToggle.addEventListener('click', function() {
   menuList.classList.toggle('open');
