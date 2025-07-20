@@ -30,4 +30,5 @@ document.querySelectorAll('.features-container-list a').forEach(link => {
       document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
       document.querySelector(`#${tab}`).style.display = 'block';
   });
+
 });
