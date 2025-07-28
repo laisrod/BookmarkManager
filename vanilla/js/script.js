@@ -1,4 +1,3 @@
-
 const menuToggle = document.querySelector('.menu-toggle');
 const menuList = document.querySelector('.header__list');
 const menuClose = document.querySelector('.menu-close');
