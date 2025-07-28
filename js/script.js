@@ -4,7 +4,6 @@ const menuClose = document.querySelector('.menu-close');
 
 const section = document.querySelector('.section');
 
-console.log('SECTION', section);
 
 menuToggle.addEventListener('click', function() {
   menuList.classList.toggle('open');
@@ -29,5 +28,4 @@ document.querySelectorAll('.features-container-list a').forEach(link => {
       document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
       document.querySelector(`#${tab}`).style.display = 'block';
   });
-
 });
