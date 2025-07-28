@@ -18,36 +18,39 @@
 </head>
 <body>
   <!-- header -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ">
-    <div class="container-fluid justify-content-between">
-      <a class="navbar-brand" href="#">
-        <img src="img/logo-bookmark.svg" alt="Logo Bookmark Manager" class="d-inline-block align-text-top"/>
-      </a>
-      <button class="navbar-toggler px-4 py-2 rounded-pill menu-toggle" type="button" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-brand-section d-flex align-items-center">
+        <div class="brand-icon me-2">
+          <img src="img/logo-bookmark.svg" alt="Logo Bookmark Manager" class="d-inline-block align-text-top"/>
+        </div>
+        <span class="brand-text fw-bold text-dark">BOOKMARK</span>
+      </div>
+
+      <button class="navbar-toggler px-4 py-2 rounded-pill menu-toggle d-lg-none" type="button" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 justify-content-end nav-link text-muted fw-medium fs-4 px-3 py-2 flex-column flex-lg-row">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
           <li class="nav-item">
-            <a class="nav-link" href="#features">FEATURES</a>
+            <a class="nav-link text-muted fw-medium text-uppercase" href="#features">FEATURES</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#pricing">PRICING</a>
+            <a class="nav-link text-muted fw-medium text-uppercase" href="#pricing">PRICING</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact">CONTACT</a>
+            <a class="nav-link text-muted fw-medium text-uppercase" href="#contact">CONTACT</a>
+          </li>
+          <li class="nav-item ms-3">
+            <button class="btn btn-login text-white fw-bold text-uppercase">LOGIN</button>
           </li>
         </ul>
-        <div class="d-flex justify-content-center justify-content-lg-end">
-          <button class="btn btn-danger text-white btn-lg px-4 py-3 fs-5 fw-bold">LOGIN</button>
-        </div>
       </div>
     </div>
     
   </nav>
 
-  <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-header">
       <div class="mobile-menu-logo">
@@ -62,7 +65,7 @@
         <li><a href="#features">FEATURES</a></li>
         <li><a href="#pricing">PRICING</a></li>
         <li><a href="#contact">CONTACT</a></li>
-        <li><a href="#" style="color: #FF6B6B;">LOGIN</a></li>
+        <li><a href="#">LOGIN</a></li>
       </ul>
     </nav>
     
@@ -73,16 +76,14 @@
   </div>
   <!-- pagina1 -->
   <section class="section section-1" style="min-height: 100vh;">
-    <div id="section-1" class="section-container container-fluid py-5 d-flex align-items-center">
+    <div id="section-1" class="section-container container-fluid py-4 d-flex align-items-center">
       <div class="section-content row w-100">
         
-        <!-- Imagem: mobile acima, desktop à direita -->
         <div class="section__image col-lg-6 position-relative d-flex justify-content-end align-items-end order-1 order-lg-2 mb-4 mb-lg-0">
           <div class="position-absolute bottom-0 end-0 rounded-circle" style="width: 300px; height: 200px; z-index: -1; transform: translate(50px, 50px); background-color: #090cb8a4;"></div>
           <img src="img/illustration-hero.svg" alt="Bookmark Manager" class="img-fluid w-75 position-relative" style="transform: translateY(30px);" />
         </div>
   
-        <!-- Texto: mobile abaixo, desktop à esquerda -->
         <div class="section__text col-lg-6 pe-lg-5 text-start order-2 order-lg-1">
           <h1 class="section__text-title display-4 fw-bold text-dark mb-4">A Simple Bookmark Manager</h1>
           <p class="section__text-description lead text-muted mb-4">A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly try it for free.</p>
@@ -91,12 +92,10 @@
             <button class="btn btn-outline-secondary btn-lg px-4 py-3 shadow-sm fw-bold">Get it on Firefox</button>
           </div>
         </div>
-  
       </div>
     </div>
   </section>
 
-  <!-- features pagina 2  -->
   <section class="section section-center" id="features">
     <div class="section-container container text-center py-5">
       <div class="section__text section__text--center">
@@ -112,9 +111,6 @@
         <li class="mx-3"><a href="#features" data-tab="tab-easy" class="text-muted fw-medium text-decoration-none fs-3">Easy Sharing</a></li>
       </ul>
       
-    
-
-
       <!--tab2-->
       <div id="tab-speedy" class="tab-content" style="display: none;">
         <div class="container-fluid py-5 d-flex align-items-center">
@@ -167,9 +163,7 @@
             </div>
           </div>
         </div>
-      </div>
-
-                      
+      </div>          
     </div>
   </section>
 
@@ -355,21 +349,21 @@
   <!-- footer -->
   <footer class="footer py-4" style="background-color: #1c1c3d;">
     <div class="container">
-      <div class="d-flex flex-column align-items-center text-center gap-4">
-        <div class="footer__logo d-flex flex-column align-items-center mb-2">
+      <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center text-lg-start gap-4">
+        <div class="footer__logo d-flex flex-column align-items-center align-items-lg-start mb-2 mb-lg-0">
           <img src="img/logo-bookmark.svg" alt="Bookmark Manager" class="mb-2" style="width: 40px; height: 40px;" />
           <span class="footer__logo-text text-white fw-bold fs-3">BOOKMARK</span>
         </div>
 
-        <nav class="footer__nav w-100">
-          <ul class="footer__links d-flex flex-column align-items-center list-unstyled mb-0 gap-4">
+        <nav class="footer__nav">
+          <ul class="footer__links d-flex flex-column flex-lg-row align-items-center list-unstyled mb-0 gap-4 gap-lg-5">
             <li class="footer__links-item"><a href="#" class="text-white text-decoration-none fw-medium fs-5">FEATURES</a></li>
             <li class="footer__links-item"><a href="#" class="text-white text-decoration-none fw-medium fs-5">PRICING</a></li>
             <li class="footer__links-item"><a href="#" class="text-white text-decoration-none fw-medium fs-5">CONTACT</a></li>
           </ul>
         </nav>
 
-        <div class="footer__social d-flex justify-content-center gap-4 mt-2">
+        <div class="footer__social d-flex justify-content-center gap-4">
           <a href="#" class="footer__social-link"><img src="img/icon-facebook.svg" alt="Facebook" style="width: 28px; height: 28px; filter: brightness(0) invert(1);"></a>
           <a href="#" class="footer__social-link"><img src="img/icon-twitter.svg" alt="Twitter" style="width: 28px; height: 28px; filter: brightness(0) invert(1);"></a>
         </div>

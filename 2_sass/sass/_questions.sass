@@ -89,7 +89,7 @@
     font-weight: variaveis.$font-weight
 
   .question__container-title
-    font-size: variaveis.$font-size-description
+    font-size: variaveis.$font-size-description !important
     font-weight: variaveis.$font-weight
     color: variaveis.$text-dark
     margin: variaveis.$margin-auto
@@ -100,6 +100,15 @@
     padding: 0 0 variaveis.$padding-small 0
     margin: variaveis.$margin-auto
     line-height: variaveis.$line-height-default
+
+ 
+  .header__list-link:hover,
+  .header__list-link:focus
+    color: variaveis.$danger
+    background: transparent
+    cursor: variaveis.$cursor-pointer
+  
+
 
 @media (max-width: variaveis.$tablet)
   
