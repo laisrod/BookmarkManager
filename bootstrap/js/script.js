@@ -80,7 +80,6 @@ document.querySelectorAll('.features-container-list a').forEach(link => {
   });
 });
 
-// Função para controlar o menu lateral mobile
 function toggleMobileMenu() {
   const mobileMenu = document.getElementById('mobileMenu');
   mobileMenu.classList.toggle('active');
