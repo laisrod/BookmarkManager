@@ -1,0 +1,250 @@
+@use 'variaveis'
+
+.header
+  padding: variaveis.$padding-small variaveis.$padding-large
+  justify-content: variaveis.$justify-content-space-around
+  flex-direction: variaveis.$flex-row
+  position: variaveis.$position-fixed
+  top: 0
+  left: 0
+  width: variaveis.$width-100-icon
+  z-index: variaveis.$z-index-header
+  background: variaveis.$primary
+  box-shadow: variaveis.$box-shadow-header
+
+.header__nav
+  width: variaveis.$width-100-icon
+
+.header__container
+  display: variaveis.$display-flex
+  align-items: variaveis.$align-items-center
+  justify-content: variaveis.$justify-content-space-between
+  margin: variaveis.$margin-auto
+  flex-direction: variaveis.$flex-row
+  width: variaveis.$width-100-icon
+  padding: 0 variaveis.$padding-medium
+
+.header__logo-image
+  margin: variaveis.$margin-auto
+  display: variaveis.$display-block
+  width: 32px
+  height: 32px
+  padding: 0
+
+.header__list
+  display: variaveis.$display-flex
+  gap: variaveis.$gap-medium
+  margin-bottom: variaveis.$margin-medium
+  background-color: variaveis.$primary
+  margin-left: auto
+  margin-right: variaveis.$margin-small
+  align-self: variaveis.$align-self-flex-end
+  align-items: variaveis.$align-items-center
+
+.header__list-item
+  list-style: variaveis.$list-style-none
+  background-color: variaveis.$primary
+  gap: variaveis.$gap-small
+  font-size: variaveis.$font-size-description
+  text-decoration: variaveis.$text-decoration-none
+  color: variaveis.$black
+  padding: variaveis.$padding-small variaveis.$padding-xlarge
+  cursor: variaveis.$cursor-pointer
+
+.header__list-link
+  color: variaveis.$gray
+  text-decoration: variaveis.$text-decoration-none
+  transition: variaveis.$transition-default
+
+.header__list-link:hover
+  border-bottom: variaveis.$border-bottom-default variaveis.$danger
+
+.menu-toggle
+  display: variaveis.$display-none
+  position: variaveis.$position-fixed
+  top: variaveis.$padding-small
+  right: variaveis.$padding-small
+  z-index: variaveis.$z-index-menu-toggle
+  background: variaveis.$background-none
+  border: variaveis.$border-none
+  font-size: variaveis.$font-size-description
+  color: variaveis.$black
+  cursor: variaveis.$cursor-pointer
+
+.menu-toggle.hide
+  display: variaveis.$display-none
+
+
+@media (max-width: variaveis.$mobile)
+  .header
+    padding: variaveis.$padding-large
+
+  .header__list
+    display: variaveis.$display-none
+    position: variaveis.$position-fixed
+    top: 0
+    left: 0
+    right: 0
+    width: variaveis.$max-width-default
+    max-width: variaveis.$max-width-vw
+    height: variaveis.$height-100-icon
+    background: variaveis.$dark-blue
+    flex-direction: variaveis.$flex-direction-column
+    align-items: variaveis.$align-items-center
+    justify-content: variaveis.$justify-content-start
+    padding-top: variaveis.$padding-xlarge
+    margin: 0  
+    z-index: variaveis.$z-index-menu-close
+    overflow-x: variaveis.$overflow-x-hidden
+
+  .header__list.open
+    display: variaveis.$display-flex
+
+  .header__list-item
+      text-align: variaveis.$text-align-center
+      color: variaveis.$black
+      font-size: variaveis.$font-size-description
+      letter-spacing: variaveis.$letter-spacing-default
+      font-weight: variaveis.$font-weight
+      padding: variaveis.$padding-large 0
+      background: variaveis.$background-none
+      border-bottom: variaveis.$border-bottom-default variaveis.$translucent-white
+      transition: background variaveis.$transition-default
+      width: variaveis.$width-100-icon
+      &:last-child
+        border-bottom: none
+      a, button
+        color: variaveis.$white
+        background: variaveis.$background-none
+        border: variaveis.$border-none
+        font-size: inherit
+        font-family: inherit
+        letter-spacing: inherit
+        font-weight: inherit
+        width: variaveis.$width-100-icon
+        text-align: variaveis.$text-align-center
+        padding: 0
+        cursor: variaveis.$cursor-pointer
+      a:hover, button:hover
+        background: variaveis.$translucent-white
+      .header__list-social
+        display: variaveis.$display-flex
+        flex-direction: variaveis.$flex-direction-row !important
+        gap: variaveis.$gap-small2
+        margin-top: variaveis.$margin-large
+        border-bottom: variaveis.$border-none
+        position: variaveis.$position-relative
+        left: 0
+        right: 0
+        bottom: 0
+        align-items: variaveis.$align-items-center
+        justify-content: variaveis.$justify-content-center
+        width: variaveis.$width-100-icon
+      .header__social-link
+        display: variaveis.$display-block
+        margin: variaveis.$margin-auto
+      .header__social-link img
+        height: variaveis.$height-medium
+        filter: brightness(0) invert(1)
+
+  .header, .footer
+    flex-direction: variaveis.$flex-direction-row 
+    align-items: variaveis.$align-items-center
+    padding: variaveis.$padding-medium
+    font-size: variaveis.$font-size-base
+    gap: variaveis.$gap-medium
+    width: 100%
+    max-width: variaveis.$width-100-icon
+    overflow-x: variaveis.$overflow-x-hidden
+    min-height: variaveis.$min-height-header
+
+  .header__container, .footer-container
+    flex-direction: variaveis.$flex-direction-row
+    align-items: variaveis.$align-items-center
+    justify-content: variaveis.$justify-content-space-between
+    gap: variaveis.$gap-medium
+    width: variaveis.$max-width-default
+    max-width: variaveis.$max-width-default
+    padding: 0 variaveis.$padding-large
+    overflow-x: variaveis.$overflow-x-hidden
+
+  .header__logo-image
+    width: variaveis.$width-small
+    height: variaveis.$height-small
+    display: variaveis.$display-block
+    margin: 0
+    align-self: variaveis.$align-self-flex-start
+
+  .menu-toggle
+    display: variaveis.$display-block
+    position: variaveis.$position-fixed
+    top: variaveis.$padding-small
+    right: variaveis.$padding-small
+    z-index: variaveis.$z-index-menu-toggle
+    background: variaveis.$background-none
+    border: variaveis.$border-none
+    font-size: variaveis.$font-size-description
+    color: variaveis.$black
+    cursor: variaveis.$cursor-pointer
+
+  .menu-toggle.hide
+    display: variaveis.$display-none
+
+  .menu-close
+    display: variaveis.$display-block
+    position: variaveis.$position-fixed
+    top: variaveis.$padding-small
+    right: variaveis.$padding-small
+    z-index: variaveis.$z-index-menu-toggle
+    background: variaveis.$background-none
+    border: variaveis.$border-none
+    font-size: variaveis.$font-size-description
+    color: variaveis.$white
+    cursor: variaveis.$cursor-pointer
+
+  .menu-close.show
+    display: variaveis.$display-block !important
+
+  @media (max-width: variaveis.$tablet)
+  .header
+    padding: variaveis.$padding-extra-small variaveis.$padding-small
+  .header__list
+    margin-left: variaveis.$margin-auto
+    margin-right: variaveis.$margin-none
+
+  .header__list-item
+    font-size: variaveis.$font-size-base
+    padding: variaveis.$padding-small variaveis.$padding-large
+    margin-top: variaveis.$margin-small
+
+  .btn.btn--secondary, .btn.btn--xlarge, .btn.btn--small
+    font-size: variaveis.$font-size-base
+    padding: variaveis.$padding-small variaveis.$padding-large
+    margin-top: variaveis.$margin-small
+
+.menu-icon
+  display: variaveis.$display-block
+  width: variaveis.$width-icon
+  height: variaveis.$height-icon
+  background: variaveis.$black
+  border-radius: variaveis.$border-radius-icon
+  position: variaveis.$position-relative
+
+  &::before, &::after
+    content: ''
+    display: variaveis.$display-block
+    width: variaveis.$width-icon
+    height: variaveis.$height-icon
+    background: variaveis.$black
+    border-radius: variaveis.$border-radius-icon
+    position: variaveis.$position-absolute
+    left: variaveis.$margin-none
+
+  &::before
+    top: variaveis.$margin-small
+
+  &::after
+    top: variaveis.$margin-small
+
+
+
