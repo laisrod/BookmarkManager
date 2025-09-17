@@ -5,13 +5,17 @@
   "main": "index.js",
 "scripts": {
   "test": "echo \"Error: no test specified\" && exit 1",
-  "sass:sass": "sass sass/styles.sass css/styles.css",
-  "sass:sass:watch": "sass --watch sass/styles.sass:css/styles.css"
+  "sass:compile": "sass sass/styles.sass css/styles.css",
+  "sass:watch": "sass --watch sass/styles.sass:css/styles.css",
+  "build": "npm run sass:compile && cp index.html dist/",
+  "dev": "npm run sass:watch & live-server --port=3000",
+  "start": "npm run sass:compile && cp index.html dist/ && live-server --port=3000"
 },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "sass": "^1.89.2"
+    "sass": "^1.89.2",
+    "live-server": "^1.2.2"
   }
 }
